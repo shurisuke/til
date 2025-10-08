@@ -6,3 +6,15 @@ user.name = "David"
 user.occupation = "Code Artist"
 user.save
 
+
+### whereメソッドに関するサンプルコード
+
+users = User.where(name: "taro")
+users.class
+# => ActiveRecord::Relation
+
+users.pluck(:email)
+# => ["taro@example.com", "taro2@example.com"]
+
+
+
