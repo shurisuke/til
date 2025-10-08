@@ -7,6 +7,7 @@ user.occupation = "Code Artist"
 user.save
 
 
+
 ### whereメソッドに関するサンプルコード
 
 users = User.where(name: "taro")
@@ -18,3 +19,10 @@ users.pluck(:email)
 
 
 
+### updateとupdate!の違い
+
+user.update(name: nil)
+# => false
+
+user.update!(name: nil)
+# => ActiveRecord::RecordInvalid (Validation failed)
