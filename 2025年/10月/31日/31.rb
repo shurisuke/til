@@ -14,7 +14,19 @@
 
 # LIKE 検索の SQL と Rails
 # NG（SyntaxErrorになる）
-Sentence.where("body LIKE "%パスタ%"") 
+Sentence.where("body LIKE "%パスタ%"")
 
 # OK（SQL文字列をシングルクォートで囲み、LIKEの中身はダブルクォート or 変数展開）
 Sentence.where('body LIKE ?', "%パスタ%")
+
+
+# スコープの切り出し
+
+##モデルに共通処理を切り出せる：
+# Article モデル
+scope :like_body, ->(word) { where('body LIKE ?', "%#{word}%") }
+
+# 呼び出し例
+Article.like_body("Rails")
+
+
