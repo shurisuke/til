@@ -30,3 +30,9 @@ scope :like_body, ->(word) { where('body LIKE ?', "%#{word}%") }
 Article.like_body("Rails")
 
 
+# クエリの設計図（この時点ではDBにアクセスしない）
+relation = Article.where(published: true)
+
+# 実際にDBに問い合わせるのは以下のように配列化したとき
+relation.to_a
+relation.each { |a| puts a.title }
