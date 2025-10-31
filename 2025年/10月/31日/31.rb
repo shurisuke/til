@@ -3,7 +3,7 @@
 = form_with url: login_path, scope: :session, local: true do |f|
     = f.label :email
     = f.text_field :email
-  
+
   # 送信される params はこうなる：
   # {
   #   "session" => {
@@ -12,3 +12,9 @@
   # }
 
 
+# LIKE 検索の SQL と Rails
+# NG（SyntaxErrorになる）
+Sentence.where("body LIKE "%パスタ%"") 
+
+# OK（SQL文字列をシングルクォートで囲み、LIKEの中身はダブルクォート or 変数展開）
+Sentence.where('body LIKE ?', "%パスタ%")
