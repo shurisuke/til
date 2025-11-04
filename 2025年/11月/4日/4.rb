@@ -30,3 +30,19 @@ content_tag(:iframe, nil,
   <a href="https://twitter.com/ユーザー名/status/ツイートID"></a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+# Slimでのコメントアウト方法
+/ これは Slim 上のコメント
+/- Ruby 的にも無視したいコードのとき
+
+
+# バリデーションのエラーメッセージ翻訳
+ja:
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            eye_catch_width:
+              greater_than: "は100以上にしてください"
