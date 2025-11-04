@@ -23,3 +23,10 @@ content_tag(:iframe, nil,
   height: 315,
   allowfullscreen: true
 )
+
+
+# Twitter の投稿埋め込み（API不要）
+<blockquote class="twitter-tweet">
+  <a href="https://twitter.com/ユーザー名/status/ツイートID"></a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
