@@ -9,3 +9,8 @@ iframe width="560" height="315" src="https://www.youtube.com/embed/#{embed.ident
   blockquote.twitter-tweet
     a href="https://twitter.com/ユーザー名/status/ツイートID"
   script async=true src="https://platform.twitter.com/widgets.js" charset="utf-8"
+
+
+# Font Awesomeのアイコン使用法
+## Slimでの例
+i.fa.fa-twitter
