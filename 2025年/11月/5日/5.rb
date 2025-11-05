@@ -14,3 +14,9 @@ iframe width="560" height="315" src="https://www.youtube.com/embed/#{embed.ident
 # Font Awesomeのアイコン使用法
 ## Slimでの例
 i.fa.fa-twitter
+
+
+# JavaScriptの読み込み場所
+= javascript_include_tag 'admin'
+= javascript_include_tag 'https://platform.twitter.com/widgets.js', async: true, charset: 'utf-8'
+
