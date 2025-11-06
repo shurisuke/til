@@ -16,3 +16,12 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+
+# Rubyの %i と %w について
+
+%i[foo bar baz]
+# => [:foo, :bar, :baz]
+
+%w[apple banana cherry]
+# => ["apple", "banana", "cherry"]
