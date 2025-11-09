@@ -53,3 +53,8 @@ grade = case value
 # deleteメソッドの文字削除
 "abcde".delete("bd")   # => "ace"
 "Hello, world.".gsub(/[,\.]/, '')  # => "Hello world"
+
+
+# 配列を文字列に戻す方法
+["a", "b", "c"].join           # => "abc"
+["a", "b", "c"].join("-")      # => "a-b-c"
