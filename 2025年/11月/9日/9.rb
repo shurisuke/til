@@ -48,3 +48,8 @@ grade = case value
         when xxx then yyy
         else zzz
         end
+
+
+# deleteメソッドの文字削除
+"abcde".delete("bd")   # => "ace"
+"Hello, world.".gsub(/[,\.]/, '')  # => "Hello world"
