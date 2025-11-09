@@ -20,3 +20,31 @@ word = "rantekun"
 odd_chars, even_chars = word.chars.partition.with_index { |_, i| i.odd? }
 # odd_chars  => ["a", "t", "k", "n"]
 # even_chars => ["r", "n", "e", "u"]
+
+
+# case式の使い方と使い分け
+
+## 基本構文：値とマッチさせるタイプ (caseに値や変数を渡す)
+case value
+when 条件1
+  処理1
+when 条件2
+  処理2
+else
+  デフォルト処理
+end
+
+## caseに値を渡さないタイプ（条件を直接評価）
+case
+when 条件式1
+  処理1
+when 条件式2
+  処理2
+end
+
+## 代入式として使う時
+grade = case value
+        when xxx then yyy
+        when xxx then yyy
+        else zzz
+        end
