@@ -22,3 +22,14 @@ nameもgroupに含めることでエラー回避   .select("category.category_id
 nameをgroupに含めていない → エラー   .select("category.category_id, category.name, COUNT(*) AS number_of_film")
                                   .joins(:film_categories)
                                   .group("category.category_id")
+
+
+4. アソシエーション名とテーブル名の使い分けを理解した
+
+Film.joins(:actors) # アソシエーション名（:actors）
+
+# select句では実テーブル名（actor, filmなど）を使う
+Film
+  .select("film.title, COUNT(actor.actor_id) AS number_of_actor")
+  .joins(:actors)
+  .group("film.title")
