@@ -33,3 +33,10 @@ Film
   .select("film.title, COUNT(actor.actor_id) AS number_of_actor")
   .joins(:actors)
   .group("film.title")
+
+
+  5. 多段joinsと中間テーブルの活用方法を整理できた
+  Category
+  .joins(film_categories: { film: { inventories: { rentals: :payments } } })
+  .select("category.name, SUM(payment.amount) AS revenue")
+  .group("category.name")
