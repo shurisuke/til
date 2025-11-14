@@ -10,3 +10,15 @@ havingで絞る例（OK）：            Category
                                 .group("category.name")
                                 .having("SUM(payment.amount) >= ?", 100)
 whereに集計関数を使うとエラー（NG）：Category.where("SUM(payment.amount) >= ?", 100)
+
+
+3. only_full_group_by モードによるエラーと対処
+参考コード（OK）：                  Category
+nameもgroupに含めることでエラー回避   .select("category.category_id, category.name, COUNT(*) AS number_of_film")
+                                  .joins(:film_categories)
+                                  .group("category.category_id, category.name")
+
+参考コード（NG）：                  Category
+nameをgroupに含めていない → エラー   .select("category.category_id, category.name, COUNT(*) AS number_of_film")
+                                  .joins(:film_categories)
+                                  .group("category.category_id")
